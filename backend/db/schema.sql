@@ -17,12 +17,12 @@ CREATE TABLE users (
 user_id INT AUTO_INCREMENT NOT NULL,
 firstName VARCHAR(255),
 lastName VARCHAR(255),
-image VARCHAR(255),
 phone VARCHAR(255),
 age INT(3),
 email VARCHAR(255),
 password VARCHAR(255),
 role_id INT,
+active boolean,
 is_deleted TINYINT DEFAULT 0,
 FOREIGN KEY (role_id) REFERENCES roles(role_id),
 PRIMARY KEY (user_id)
