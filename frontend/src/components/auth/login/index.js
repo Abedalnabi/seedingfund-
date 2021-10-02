@@ -17,7 +17,6 @@ const Login = () => {
   const state = useSelector((state) => {
     return {
       token: state.loginReducer.token,
-      user: state.loginReducer.user,
     };
   });
 

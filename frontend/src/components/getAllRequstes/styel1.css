@@ -1,0 +1,8 @@
+.sigg {
+  display: grid;
+  grid-template-columns: 35% 35% 35%;
+  justify-content: center;
+  justify-self: center;
+  justify-items: center;
+  row-gap: 50px;
+}

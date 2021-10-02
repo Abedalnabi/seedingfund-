@@ -28,20 +28,12 @@ const BeforeSignUp = () => {
       if (!firstName || !lastName || !email || !password || !age) {
         setMessage("Please fill all the info");
       } else {
-        await axios
-          .post("http://localhost:5000/register", newUser)
-          .then((response) => {
-            console.log(response.data[0].active);
-            if (response.data[0].active == 1) {
-              console.log(response);
-              setMessage("The user has been created successfully");
-              setTimeout(function () {
-                history.push("/login");
-              }, 2000);
-            } else {
-              setMessage("you need to accept from admin");
-            }
-          });
+        await axios.post("http://localhost:5000/register", newUser).then(() => {
+          setMessage("The user has been created successfully");
+          setTimeout(function () {
+            history.push("/login");
+          }, 2000);
+        });
       }
     } catch (error) {
       console.log("here");

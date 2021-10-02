@@ -31,10 +31,12 @@ PRIMARY KEY (user_id)
 -- funding table with its state
 CREATE TABLE fundingDetails (
 funding_id INT AUTO_INCREMENT NOT NULL,
-projct_name VARCHAR(255),
-projct_description VARCHAR(255),
-projct_sector VARCHAR(255),
-porject_state VARCHAR(255),
+project_name VARCHAR(255),
+project_description VARCHAR(255),
+project_sector VARCHAR(255),
+-- Project state ==> 2 = still not approve , 1 = approved , 0 = not Aprooved
+porject_state TINYINT DEFAULT 2,
+budget VARCHAR(255),
 is_deleted TINYINT DEFAULT 0,
 user_id INT,
 FOREIGN KEY (user_id) REFERENCES users(user_id),
